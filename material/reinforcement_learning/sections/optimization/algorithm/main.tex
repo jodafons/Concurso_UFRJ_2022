@@ -1,0 +1,91 @@
+
+
+
+%\documentclass{article}
+%\usepackage{algpseudocode}
+
+
+%\begin{document}
+%\begin{algorithmic}[]
+
+
+
+%\For{each episode}
+%    \State $s\leftarrow$random state from environment
+%    \For{each step}
+%        \If{random number from uniform distribution [0,1] $<$ exploration}
+%            \State$a\leftarrow$random action $a\in\mathcal{A}$
+%        \Else{}
+%            \State$a\leftarrow argmax_{a}(Q_{table}(s,a))$
+%        \EndIf{}
+%
+%        \State$s',r\leftarrow$ enviroment$\leftarrow~a$
+%        \State$Q_{table}(s,a)=Q_{table}(s,a) + \alpha[r+\gamma~Q_{table}(s',a) - Q_{table}(s,a)]$
+%        \State$reward_{total}+=r$
+%        \If{$s'$ is termina}
+%            \State\textbf{break}
+%        \Else
+%            \State$s\leftarrow~s'$
+%        \EndIf
+%    \EndFor{}
+%    %\Stateexploration $= max(0., enp.exp(-exploration_decreasing_decay*e))
+%\EndFor{}
+%\end{algorithmic}
+
+
+
+
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+
+\begin{document}
+
+\begin{algorithm}[h]
+    \DontPrintSemicolon
+    \SetAlgoLined
+    \SetNoFillComment
+    \LinesNotNumbered 
+    %\SetSideCommentLeft
+    \KwData{enviroment\tcp*[l]{world}}
+    \KwResult{$Q_{table}$\tcp*[l]{Final table with all best actions}}
+    $\beta\leftarrow~0.001$\tcp*[l]{exploartion decreasing decay for exponential decreasing}
+    $exploration\leftarrow 1$\tcp*[l]{initialize the exploration probability to 1}
+    $\gamma\leftarrow~0.99$\tcp*[l]{discounted factor}
+    $\alpha\leftarrow~0.1$\tcp*[l]{learning rate}
+    $Q_{table}\leftarrow~0~\forall s,a$\tcp*[l]{Initialize the Q-table to 0}
+    %$reward\leftarrow~0$\tcp*[l]{total reward}
+    \tcp*[l]{until max number of episodes, here is 0 to 1000}
+    \For{each episode}{
+        %$reward_{ep}\leftarrow~0$\tcp*[l]{total reward for this episode}
+        $s\leftarrow$random state from environment\\
+        \tcp*[l]{until max number of iteration per episode, here is 0 to 100}
+        \For{each iteration}{
+            \tcp*[l]{uniform distribution with limits:[0,1]}
+            \eIf{random number from uniform distribution $<$ exploration}{
+                $a\leftarrow$random action where $a\in\mathcal{A}(s)$
+            }{
+                $a\leftarrow argmax_{a}(Q_{table}(s,a))$
+            }
+            $s',r\leftarrow$enviroment$\leftarrow~a$\\
+            $Q_{table}(s,a)=Q_{table}(s,a) + \alpha[r+\gamma~Q_{table}(s',a) - Q_{table}(s,a)]$\\
+            %$reward_{ep}r\leftarrow~reward+r$\\
+            \eIf{$s'$ is terminal}{
+                \textbf{break}
+            }{
+                $s\leftarrow~s'$
+            }
+        }
+        \tcp*[l]{here, 0.01 is the minimal exploration value}
+        $exploration\leftarrow~max(0.01, e^{\beta*episode})$
+
+    }
+
+
+\end{algorithm}
+
+
+\end{document}
+

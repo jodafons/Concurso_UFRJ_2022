@@ -1,0 +1,40 @@
+
+\nonstopmode
+\documentclass{beamer}
+
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage[urlcolor=blue]{hyperref}
+
+
+% Some useful declarations for equations
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\newcommand{\prob}{\text{I\kern-0.15em P}}
+\newcommand{\argmin}{\arg\!\min}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{beamerthemeshadow}
+\begin{document}
+\title{Simulation and Random Numbers}  
+\author{Dr. João Victor da Fonseca Pinto}
+\date{\today} 
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Table of contents}
+    \tableofcontents
+\end{frame} 
+
+\input{sections/introduction/introduction}
+\input{sections/prng/prng}
+\input{sections/simulation/simulation}
+
+\end{document}

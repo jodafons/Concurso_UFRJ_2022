@@ -1,0 +1,36 @@
+
+\nonstopmode
+\documentclass{beamer}
+
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+
+% Some useful declarations for equations
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\newcommand{\prob}{\text{I\kern-0.15em P}}
+\newcommand{\argmin}{\arg\!\min}
+
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{beamerthemeshadow}
+\begin{document}
+\title{Introduction to Linear Regression}  
+\author{Dr. João Victor da Fonseca Pinto}
+\date{\today} 
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Table of contents}
+    \tableofcontents
+\end{frame} 
+
+\input{sections/introduction/introduction}
+\input{sections/least_squares_estimation/least_squares_estimation}
+\input{sections/strategies/strategies}
+
+\end{document}
