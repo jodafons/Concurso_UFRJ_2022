@@ -1,0 +1,113 @@
+\nonstopmode
+
+
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+%\usepackage[T1]{fontenc} % if needed
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{placeins}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage[portuguese]{babel}
+
+\usepackage{acro}
+\input{acronyms}
+
+
+
+\title{Memorial}
+
+
+%% %simple case: 2 authors, same institution
+%% \author{A. Uthor}
+%% \author{and A. Nother Author}
+%% \affiliation{Institution,\\Address, Country}
+
+% more complex case: 4 authors, 3 institutions, 2 footnotes
+% \author[]{Pesquisadora: José Gabriel Rodríguez Carneiro Gomes}
+
+\author[]{Documentação necessária para a candidatura ao cargo de Professor Adjunto do 
+          Centro de Ciências Matemáticas e da Natureza - UFRJ\\}
+\author[]{\\João Victor da Fonseca Pinto}
+
+%\author[a,2]{T. Hird\note{Also at Some University.}}
+%\author[a,2]{and Fourth}
+
+% The "\note" macro will give a warning: "Ignoring empty anchor..."
+% you can safely ignore it.
+
+%\affiliation[a]{One University,\\some-street, Country}
+%\affiliation[b]{Another University,\\different-address, Country}
+%\affiliation[c]{A School for Advanced Studies,\\some-location, Country}
+
+% e-mail addresses: one for each author, in the same order as the authors
+\emailAdd{jodafons@lps.ufrj.br}
+%\emailAdd{second@asas.edu}
+%\emailAdd{third@one.univ}
+%\emailAdd{fourth@one.univ}
+
+
+
+
+\begin{document} 
+\maketitle
+\flushbottom
+
+\newpage
+
+\input{sections/intro/intro}
+
+
+\newpage
+
+
+%\printacronyms[name=Abreviações]
+%\newpage
+
+%\subsection{Microeletrônica Digital(?)}
+
+%\subsection{Cronograma}
+
+% BIBLIOGRAPHY
+% use BIBTEX if you want
+\bibliographystyle{JHEP}
+\bibliography{bibtex}
+
+% The bibliography will probably be heavily edited during typesetting.
+% We'll parse it and, using the arxiv number or the journal data, will
+% query inspire, trying to verify the data (this will probalby spot
+% eventual typos) and retrive the document DOI and eventual errata.
+% We however suggest to always provide author, title and journal data:
+% in short all the informations that clearly identify a document.
+
+%\begin{thebibliography}{99}
+
+%\bibitem{a}
+%Author, \emph{Title}, \emph{J. Abbrev.} {\bf vol} (year) pg.
+
+%\bibitem{b}
+%Author, \emph{Title},
+%arxiv:1234.5678.
+
+%\bibitem{c}
+%Author, \emph{Title},
+%Publisher (year).
+
+
+% Please avoid comments such as "For a review'', "For some examples",
+% "and references therein" or move them in the text. In general,
+% please leave only references in the bibliography and move all
+% accessory text in footnotes.
+
+% Also, please have only one work for each \bibitem.
+
+
+%\end{thebibliography}
+\end{document}
